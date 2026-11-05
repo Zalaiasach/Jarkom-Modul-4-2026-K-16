@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname Shibuya
+
+interface Fa0/0
+ description Ke Router12 Phantoma (Subnet A9)
+ ip address 10.4.0.34 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch12 (Lain & Mika - Subnet A17)
+ ip address 10.4.1.65 255.255.255.192
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.33
+exit
+write memory

@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname Psyche
+
+interface Fa0/0
+ description Ke Switch4 (Subnet A10)
+ ip address 10.4.0.42 255.255.255.248
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch5 (Karl & Lin - Subnet A25)
+ ip address 10.4.16.1 255.255.252.0
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.41
+exit
+write memory

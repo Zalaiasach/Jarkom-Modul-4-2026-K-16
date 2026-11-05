@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname Phantoma
+
+interface Fa0/0
+ description Ke Router11 Knights (Subnet A8)
+ ip address 10.4.0.30 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch8 Emi (Subnet A13)
+ ip address 10.4.0.65 255.255.255.224
+ no shutdown
+
+interface Fa1/0
+ description Ke Router13 Shibuya (Subnet A9)
+ ip address 10.4.0.33 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.29
+ip route 10.4.1.64 255.255.255.192 10.4.0.34
+exit
+write memory

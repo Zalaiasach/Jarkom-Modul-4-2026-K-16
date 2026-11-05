@@ -1,0 +1,18 @@
+enable
+configure terminal
+hostname Accela
+
+interface Fa0/0
+ description Ke Router7 Schumann (Subnet A4)
+ ip address 10.4.0.14 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch7 (Omnipresence & Denpa - Subnet A24)
+ ip address 10.4.12.1 255.255.252.0
+ no shutdown
+
+# Default Route kembali ke Schumann
+ip route 0.0.0.0 0.0.0.0 10.4.0.13
+exit
+write memory

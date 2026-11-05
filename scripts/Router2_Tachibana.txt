@@ -1,0 +1,28 @@
+enable
+configure terminal
+hostname Tachibana
+
+interface Fa0/0
+ description Ke Router1 Wired (Subnet A3)
+ ip address 10.4.0.10 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch9 (Collective & Ghost - Subnet A23)
+ ip address 10.4.8.1 255.255.254.0
+ no shutdown
+
+interface Fa1/0
+ description Ke Router9 Deus (Subnet A5)
+ ip address 10.4.0.17 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.9
+ip route 10.4.1.128 255.255.255.128 10.4.0.18
+ip route 10.4.0.192 255.255.255.192 10.4.0.18
+ip route 10.4.0.56 255.255.255.248 10.4.0.18
+ip route 10.4.0.64 255.255.255.224 10.4.0.18
+ip route 10.4.1.64 255.255.255.192 10.4.0.18
+ip route 10.4.0.20 255.255.255.240 10.4.0.18
+exit
+write memory

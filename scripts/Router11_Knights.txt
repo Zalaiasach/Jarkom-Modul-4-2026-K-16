@@ -1,0 +1,25 @@
+enable
+configure terminal
+hostname Knights
+
+interface Fa0/0
+ description Ke Router10 Protocol7 (Subnet A7)
+ ip address 10.4.0.26 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Server5 Eiri (Subnet A12)
+ ip address 10.4.0.57 255.255.255.248
+ no shutdown
+
+interface Fa1/0
+ description Ke Router12 Phantoma (Subnet A8)
+ ip address 10.4.0.29 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.25
+ip route 10.4.0.64 255.255.255.224 10.4.0.30
+ip route 10.4.1.64 255.255.255.192 10.4.0.30
+ip route 10.4.0.32 255.255.255.252 10.4.0.30
+exit
+write memory

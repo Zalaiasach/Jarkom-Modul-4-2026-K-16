@@ -1,0 +1,50 @@
+enable
+configure terminal
+hostname Wired
+
+interface Fa0/0
+ description Ke Router0 Cyberia (Subnet A1)
+ ip address 10.4.0.2 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch4 (Subnet A10)
+ ip address 10.4.0.41 255.255.255.248
+ no shutdown
+
+interface Fa1/0
+ description Ke Router3 Navi (Subnet A2)
+ ip address 10.4.0.5 255.255.255.252
+ no shutdown
+
+interface Fa1/1
+ description Ke Router2 Tachibana (Subnet A3)
+ ip address 10.4.0.9 255.255.255.252
+ no shutdown
+
+# Default Route ke Cyberia
+ip route 0.0.0.0 0.0.0.0 10.4.0.1
+
+# Rute ke Cabang Barat (via Switch4)
+ip route 10.4.16.0 255.255.252.0 10.4.0.42
+ip route 10.4.6.0 255.255.254.0 10.4.0.43
+ip route 10.4.0.128 255.255.255.192 10.4.0.43
+ip route 10.4.0.48 255.255.255.248 10.4.0.44
+ip route 10.4.0.12 255.255.255.252 10.4.0.44
+ip route 10.4.12.0 255.255.252.0 10.4.0.44
+
+# Rute ke Cabang Timur (Router3 / Navi)
+ip route 10.4.4.0 255.255.255.0 10.4.0.6
+ip route 10.4.1.0 255.255.255.192 10.4.0.6
+ip route 10.4.3.0 255.255.255.0 10.4.0.6
+
+# Rute ke Cabang Selatan (Router2 / Tachibana)
+ip route 10.4.8.0 255.255.254.0 10.4.0.10
+ip route 10.4.0.16 255.255.255.240 10.4.0.10
+ip route 10.4.1.128 255.255.255.128 10.4.0.10
+ip route 10.4.0.192 255.255.255.192 10.4.0.10
+ip route 10.4.0.56 255.255.255.248 10.4.0.10
+ip route 10.4.0.64 255.255.255.224 10.4.0.10
+ip route 10.4.1.64 255.255.255.192 10.4.0.10
+exit
+write memory

@@ -1,0 +1,27 @@
+enable
+configure terminal
+hostname Protocol7
+
+interface Fa0/0
+ description Ke Router9 Deus (Subnet A6)
+ ip address 10.4.0.22 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch11 (Chisa & Hodgeson - Subnet A15)
+ ip address 10.4.0.193 255.255.255.192
+ no shutdown
+
+interface Fa1/0
+ description Ke Router11 Knights (Subnet A7)
+ ip address 10.4.0.25 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.21
+ip route 10.4.0.56 255.255.255.248 10.4.0.26
+ip route 10.4.0.64 255.255.255.224 10.4.0.26
+ip route 10.4.1.64 255.255.255.192 10.4.0.26
+ip route 10.4.0.28 255.255.255.252 10.4.0.26
+ip route 10.4.0.32 255.255.255.252 10.4.0.26
+exit
+write memory

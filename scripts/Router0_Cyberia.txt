@@ -1,0 +1,24 @@
+enable
+configure terminal
+hostname Cyberia
+
+interface Fa0/0
+ description Ke Cloud0
+ ip address 10.4.89.246 255.255.255.0
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch0 (JJ & MyuMyu - Subnet A19)
+ ip address 10.4.2.1 255.255.255.0
+ no shutdown
+
+interface Fa1/0
+ description Ke Router1 (Subnet A1)
+ ip address 10.4.0.1 255.255.255.252
+ no shutdown
+
+# Routing
+ip route 0.0.0.0 0.0.0.0 10.4.89.1
+ip route 10.4.0.0 255.255.224.0 10.4.0.2
+exit
+write memory

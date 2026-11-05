@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname Schumann
+
+interface Fa0/0
+ description Ke Switch4 (Subnet A10)
+ ip address 10.4.0.44 255.255.255.248
+ no shutdown
+
+interface Fa0/1
+ description Ke Server3 (Akashic - Subnet A11)
+ ip address 10.4.0.49 255.255.255.248
+ no shutdown
+
+interface Fa1/0
+ description Ke Router8 Accela (Subnet A4)
+ ip address 10.4.0.13 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.41
+ip route 10.4.12.0 255.255.252.0 10.4.0.14
+exit
+write memory

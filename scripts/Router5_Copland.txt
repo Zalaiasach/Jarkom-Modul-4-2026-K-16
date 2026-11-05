@@ -1,0 +1,22 @@
+enable
+configure terminal
+hostname Copland
+
+interface Fa0/0
+ description Ke Switch4 (Subnet A10)
+ ip address 10.4.0.43 255.255.255.248
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch6 (Masayuki - Subnet A22)
+ ip address 10.4.6.1 255.255.254.0
+ no shutdown
+
+interface Fa1/0
+ description Ke Laptop3 (Juri - Subnet A14)
+ ip address 10.4.0.129 255.255.255.192
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.41
+exit
+write memory

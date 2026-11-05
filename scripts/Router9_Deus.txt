@@ -1,0 +1,27 @@
+enable
+configure terminal
+hostname Deus
+
+interface Fa0/0
+ description Ke Router2 Tachibana (Subnet A5)
+ ip address 10.4.0.18 255.255.255.252
+ no shutdown
+
+interface Fa0/1
+ description Ke Switch10 (Lilith & Specter - Subnet A18)
+ ip address 10.4.1.129 255.255.255.128
+ no shutdown
+
+interface Fa1/0
+ description Ke Router10 Protocol7 (Subnet A6)
+ ip address 10.4.0.21 255.255.255.252
+ no shutdown
+
+ip route 0.0.0.0 0.0.0.0 10.4.0.17
+ip route 10.4.0.192 255.255.255.192 10.4.0.22
+ip route 10.4.0.56 255.255.255.248 10.4.0.22
+ip route 10.4.0.64 255.255.255.224 10.4.0.22
+ip route 10.4.1.64 255.255.255.192 10.4.0.22
+ip route 10.4.0.24 255.255.255.248 10.4.0.22
+exit
+write memory
