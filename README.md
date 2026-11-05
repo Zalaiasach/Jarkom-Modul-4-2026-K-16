@@ -96,7 +96,7 @@ Seluruh perangkat berhasil dirangkai, disambungkan menggunakan kabel *Copper Str
 
 ## 4. Tabel Perhitungan Subnetting Lengkap (Subnet A1 – A25)
 
-Tabel berikut disesuaikan 100% dengan lembar resmi spreadsheet (`sheet_vlsm_filled.xlsx`), menggunakan basis jaringan internal `192.219.0.0/19` (Kelompok K-16) dan rute subnet A1–A25:
+Tabel berikut disesuaikan 100% dengan lembar resmi spreadsheet penugasan, menggunakan basis jaringan internal `192.219.0.0/19` (Kelompok K-16) dan rute subnet A1–A25:
 
 | Subnet | Network ID | Netmask | Broadcast | Range IP | Rute Topologi (Sesuai Sheet 1) |
 | :---: | :---: | :---: | :---: | :---: | :--- |
