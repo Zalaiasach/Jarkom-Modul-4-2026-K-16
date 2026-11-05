@@ -7,6 +7,7 @@
 * **Kelompok:** K-16 (Group A)
 * **IP Server Lab / Uplink Cloud0:** `10.4.89.246/24` (Gateway: `10.4.89.1`)
 * **Blok Jaringan Internal:** `10.4.0.0/19` (Format Variabel: `10.xx.0.0`, dengan `xx = 4`)
+* **File Simulasi Packet Tracer (.pkt):** [`K2_CIDR_OSPF.pkt`](K2_CIDR_OSPF.pkt)
 
 | Nama Anggota | NRP |
 | :--- | :--- |
